@@ -1,5 +1,9 @@
-<h1>Top page</h1>
-<%= link_to '新規投稿', '/posts/new'%> <%# link_to 'リンクに表示する文字', 'リンク先のURL（今回は相対パスで表記＝http://localhost:3000を省略）' %>
+<h1>AjaxApp</h1>
+<%= form_with url:  "/posts", method: :post,id: "form" do |form| %>
+  <%= form.text_field :content %>
+  <%= form.submit '投稿する' , id: "submit" %>
+<% end %>
+
 <% @posts.each do |post| %>  
   <div class="post">
     <div class="post-date">
